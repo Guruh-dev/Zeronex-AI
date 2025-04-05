@@ -1,4 +1,4 @@
-# ZeroNex AI/ML Components Library
+# Zeronex AI/ML Components Library
 
 A comprehensive collection of artificial intelligence and machine learning components designed for cross-platform compatibility and professional deployment.
 
