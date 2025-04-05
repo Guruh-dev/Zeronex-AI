@@ -26,7 +26,7 @@ This repository contains modular AI/ML components optimized for use across multi
 ### From Source
 ```bash
 # Clone the repository
-git clone https://github.com/Guruh-dev/zeronex-ai.git
+git clone https://github.com/Guruh-dev/Zeronex-AI.git
 cd zeronex-ai
 
 # Create virtual environment (optional but recommended)
