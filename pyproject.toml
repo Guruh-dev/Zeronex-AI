@@ -1,0 +1,68 @@
+[tool.pyright]
+include = ["src", "tests"]
+exclude = [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.venv",
+    "**/.pytest_cache",
+    "**/*.pyc",
+    "**/.git",
+    "build",
+    "dist"
+]
+
+# Basic configuration
+pythonVersion = "3.11"    # Using latest stable Python version
+pythonPlatform = "All"    # Support all platforms
+venvPath = "."
+venv = ".venv"
+
+# Type checking settings
+typeCheckingMode = "basic"
+reportMissingImports = "error"
+reportMissingTypeStubs = "warning"
+reportUndefinedVariable = "error"
+reportAssertAlwaysTrue = "error"
+reportInvalidStringEscapeSequence = "error"
+reportInvalidTypeVarUse = "error"
+reportMissingParameterType = "error"
+reportUnknownParameterType = "error"  # Changed to error for stricter checks
+reportUnknownMemberType = "error"     # Changed to error for stricter checks
+reportMissingTypeArgument = "error"
+reportInvalidStubStatement = "error"
+reportIncompleteStub = "warning"
+
+[[tool.pyright.executionEnvironments]]
+root = "src"
+extraPaths = ["src"]
+pythonVersion = "3.11"
+
+[[tool.pyright.executionEnvironments]]
+root = "tests"
+extraPaths = ["src", "tests"]
+pythonVersion = "3.11"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+strict_optional = true  # Enforce strict optional type checking
+ignore_missing_imports = false  # Ensure all imports are checked
+no_implicit_optional = true  # Disallow implicit optional types
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-ra -q --cov=src"
